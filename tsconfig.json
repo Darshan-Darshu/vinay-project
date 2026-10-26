@@ -43,6 +43,7 @@
     "src/lib/ai/guest-college.test.ts",
     "src/lib/ai/admin-harness.test.ts",
     "src/lib/ai/student-read-shape.test.ts",
-    "src/lib/ai/teacher-read-shape.test.ts"
+    "src/lib/ai/teacher-read-shape.test.ts",
+    "src/lib/ai/teacher-tools.test.ts"
   ]
 }
