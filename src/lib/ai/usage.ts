@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server"
 
 export type AiFeature =
   | "question_drafts"
+  | "exam_paper"
   | "interview_turn"
   | "interview_feedback"
   | "placement_reason"

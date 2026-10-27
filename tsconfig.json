@@ -38,6 +38,7 @@
     "src/lib/ai/interview-report.test.ts",
     "src/lib/ai/placement-match.test.ts",
     "src/lib/ai/exam-marks.test.ts",
+    "src/lib/ai/exam-paper.test.ts",
     "src/lib/ai/passages.test.ts",
     "src/lib/ai/chat-limits.test.ts",
     "src/lib/ai/guest-college.test.ts",

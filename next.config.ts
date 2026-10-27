@@ -1,9 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  allowedDevOrigins: ["127.0.0.1"],
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "6mb",
+    },
+  },
   cacheComponents: true,
-  partialPrefetching: true,
+  partialPrefetching: false,
   turbopack: {
     rules: {
       "*.css": {
