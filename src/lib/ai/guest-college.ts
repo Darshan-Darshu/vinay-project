@@ -169,6 +169,19 @@ export function wantsAdmissionForm(toolResults: string[]) {
   return toolResults.some((result) => result.includes(admissionFormSignal))
 }
 
+const admissionFormTask =
+  /\b(?:admission|admissions|apply|application|register|registration|enrol(?:l|ment)?)\b/i
+const courseOnlyTask =
+  /\b(?:course|courses|subject|subjects|department|departments|semester|semesters|academic year)\b/i
+
+export function shouldOfferAdmissionForm(task: string) {
+  const text = task.trim()
+  if (!text) return false
+  if (admissionFormTask.test(text)) return true
+  if (courseOnlyTask.test(text)) return false
+  return false
+}
+
 const applicationInvite = /\b(?:fill out the application form|fill in the form|complete the form)\b|\bclick here\b[^\n]{0,120}\bapplication\b/i
 
 export function offersApplicationForm(text: string) {

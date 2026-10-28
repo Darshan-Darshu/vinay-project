@@ -7,6 +7,7 @@ import { getModel } from "@/lib/ai/model"
 import {
   admissionFormSignal,
   groundReply,
+  shouldOfferAdmissionForm,
   unpublishedReply,
   wantsAdmissionForm,
 } from "@/lib/ai/guest-college"
@@ -76,7 +77,7 @@ function guestRouter(model: LanguageModel, onForm?: () => void) {
 function admissionsAgent(model: LanguageModel) {
   return new ToolLoopAgent({
     model,
-    instructions: `You are the admissions specialist for one college. Use only your tools. Say that the office has not published an answer when a field is empty. Never invent an application status, a fee, or a deadline. When the visitor asks how to apply, wants to apply or register, or you would otherwise invite them to apply, call offer_application_form. Do not write a link, "click here", or "fill out the application form", and do not type their personal details. Finish with a summary the router can show.`,
+    instructions: `You are the admissions specialist for one college. Use only your tools. Say that the office has not published an answer when a field is empty. Never invent an application status, a fee, or a deadline. When the visitor asks about admissions, deadlines, eligibility, how to apply, registration, or wants to apply, call offer_application_form in the same turn as your reads. Do not ask whether they want to apply instead of showing the form. Skip offer_application_form only for pure course, subject, department, year, or semester lookups. Do not write a link, "click here", or "fill out the application form", and do not type their personal details. Finish with a summary the router can show.`,
     stopWhen: isStepCount(6),
     prepareStep: async ({ stepNumber }) => (stepNumber === 0 ? { toolChoice: "required" as const } : {}),
     tools: {
@@ -185,7 +186,9 @@ async function runSpecialist(
         toolResults.push(typeof output === "string" ? output : JSON.stringify(output))
       },
     })
-    if (wantsAdmissionForm(toolResults)) onForm?.()
+    if (kind === "admissions" && (wantsAdmissionForm(toolResults) || shouldOfferAdmissionForm(task))) {
+      onForm?.()
+    }
     return groundReply(result.text, toolResults) || unpublishedReply
   } catch (error) {
     console.error(error)

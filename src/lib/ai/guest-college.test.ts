@@ -13,6 +13,7 @@ import {
   passageVectorId,
   readPineconeMatches,
   unpublishedReply,
+  shouldOfferAdmissionForm,
   wantsAdmissionForm,
   withoutApplicationCta,
 } from "./guest-college.ts";
@@ -191,6 +192,19 @@ describe("wantsAdmissionForm", () => {
   it("notices the form signal and ignores other tool text", () => {
     assert.equal(wantsAdmissionForm([admissionFormSignal]), true);
     assert.equal(wantsAdmissionForm(['{"courses":[]}']), false);
+  });
+});
+
+describe("shouldOfferAdmissionForm", () => {
+  it("shows the form for admissions and apply questions", () => {
+    assert.equal(shouldOfferAdmissionForm("Tell me about admissions"), true);
+    assert.equal(shouldOfferAdmissionForm("How do I apply?"), true);
+    assert.equal(shouldOfferAdmissionForm("I want to register for admission"), true);
+  });
+
+  it("does not force the form for course-only questions", () => {
+    assert.equal(shouldOfferAdmissionForm("List active courses in ECE"), false);
+    assert.equal(shouldOfferAdmissionForm("What subjects are in BT-CSE?"), false);
   });
 });
 
