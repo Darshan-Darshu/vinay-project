@@ -41,7 +41,7 @@ Older projects show a long JWT instead. The legacy **anon** key goes in `NEXT_PU
 5. Open the **SQL Editor**. Paste and run [`supabase/setup/01_schema.sql`](supabase/setup/01_schema.sql). Wait until it finishes with no errors.
 6. In a new query, paste and run [`supabase/setup/02_demo_data.sql`](supabase/setup/02_demo_data.sql).
 
-Run both files once, on an empty project, in that order. They create the tables, storage buckets, policies, Riverside College demo data, and three logins. Password for all three is `Campus@2026`.
+Run both files once, on an empty project, in that order. They create the tables, storage buckets, policies, Kalpataru Institute of Technology demo data, and three logins. Password for all three is `Campus@2026`.
 
 | Email | Role |
 | --- | --- |

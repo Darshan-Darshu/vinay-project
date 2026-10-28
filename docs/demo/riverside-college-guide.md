@@ -1,8 +1,8 @@
-# Riverside College
+# Kalpataru Institute of Technology
 
-Riverside College is a small campus on the river bend. Mornings begin in classrooms, afternoons open onto the lawns, and teachers stay with a student from the first week through the last exam.
+Kalpataru Institute of Technology is an engineering college in Tiptur, Tumkur District, Karnataka. Classes, labs, and campus life run across the academic year, and teachers stay with a student from the first week through the last exam.
 
-The campus address is 12 River Bend Road, Kochi, Kerala 682016. The front office phone is +91 484 250 1100. The office email is office@riverside.academy.
+The campus address is Tiptur - 572202, Tumkur District, Karnataka, India. The front office phone is +91 484 250 1100. The office email is office@riverside.academy.
 
 # Admissions
 

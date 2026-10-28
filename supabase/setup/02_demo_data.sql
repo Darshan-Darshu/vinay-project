@@ -153,9 +153,9 @@ drop function private.seed_demo_user(uuid, text, text, text, text, text);
 
 update public.college_settings
 set
-  name = 'Riverside College',
-  about = 'Riverside College is a small campus on the river bend. Mornings begin in classrooms, afternoons open onto the lawns, and teachers stay with a student from the first week through the last exam.',
-  address = '12 River Bend Road, Kochi, Kerala 682016',
+  name = 'Kalpataru Institute of Technology',
+  about = 'Kalpataru Institute of Technology is an engineering college in Tiptur, Tumkur District, Karnataka. Classes, labs, and campus life run across the academic year, and teachers stay with a student from the first week through the last exam.',
+  address = 'Tiptur - 572202, Tumkur District, Karnataka, India',
   phone = '+91 484 250 1100',
   email = 'office@riverside.academy',
   admissions_info = 'Applications for 2026-27 are open until 30 November 2026. Bring the qualifying mark sheet, a photo, and a parent contact. Families are welcome to walk the campus on weekday mornings.'
@@ -524,7 +524,7 @@ values
     'publish',
     'college_settings',
     null,
-    'Priya Shah published the Riverside College profile.'
+    'Priya Shah published the Kalpataru Institute of Technology profile.'
   ),
   (
     'a9000000-0000-4000-8000-000000000002',
